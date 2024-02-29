@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javalab1.GameController">
+<VBox alignment="CENTER" prefHeight="467.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javalab1.GameController">
    <Pane prefHeight="400.0" prefWidth="600.0">
       <children>
-         <Pane fx:id="pane1" prefHeight="330.0" prefWidth="456.0" style="-fx-background-color: white;">
+         <Pane layoutY="-35.0" prefHeight="400.0" prefWidth="588.0" style="-fx-background-color: #c0f3f1;">
             <children>
-               <Pane prefHeight="330.0" prefWidth="68.0" style="-fx-background-color: #2dd7d1;">
+               <Pane fx:id="panel" prefHeight="400.0" prefWidth="68.0" style="-fx-background-color: #2dd7d1;">
                   <children>
-                     <Polygon fill="#298bae" layoutX="56.0" layoutY="170.0" points="-38.0, 6.0, 17.0, 6.0, -10.0, -16.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE" />
+                     <Polygon fx:id="bow" fill="#a8a9ad" layoutX="45.0" layoutY="205.0" points="-38.0, 6.0, 17.0, 6.0, -10.0, -16.0" rotate="90.0" stroke="BLACK" strokeType="INSIDE" />
                   </children>
                </Pane>
-               <Line endX="93.0" endY="-153.0" layoutX="332.0" layoutY="153.0" startX="93.0" startY="177.0" />
-               <Line endX="93.0" endY="-153.0" layoutX="246.0" layoutY="153.0" startX="93.0" startY="177.0" />
-               <Circle fx:id="BigCircle" layoutX="339.0" layoutY="165.0" radius="28.0" stroke="BLACK" strokeType="INSIDE">
+               <Line endX="93.0" endY="-153.0" layoutX="431.0" layoutY="153.0" startX="93.0" startY="247.0" />
+               <Line endX="93.0" endY="-200.0" layoutX="333.0" layoutY="200.0" startX="93.0" startY="200.0" />
+               <Circle fx:id="BigCircle" layoutX="427.0" layoutY="200.0" radius="28.0" stroke="BLACK" strokeType="INSIDE">
                   <fill>
                      <RadialGradient centerX="0.5" centerY="0.5" focusAngle="99.46" radius="0.5528735632183908">
                         <stops>
@@ -46,7 +47,7 @@
                         </stops>
                      </RadialGradient>
                   </fill></Circle>
-               <Circle fx:id="LittleCircle" layoutX="426.0" layoutY="165.0" radius="16.0" stroke="BLACK" strokeType="INSIDE">
+               <Circle fx:id="LittleCircle" layoutX="525.0" layoutY="200.0" radius="16.0" stroke="BLACK" strokeType="INSIDE">
                   <fill>
                      <RadialGradient centerX="0.5" centerY="0.5" focusAngle="99.46" radius="0.4954022988505747">
                         <stops>
@@ -73,30 +74,43 @@
                         </stops>
                      </RadialGradient>
                   </fill></Circle>
-            </children></Pane>
-         <Pane layoutX="455.0" prefHeight="330.0" prefWidth="145.0" style="-fx-background-color: #2dd7d1;">
-            <children>
-               <VBox alignment="TOP_CENTER" layoutX="-1.0" prefHeight="330.0" prefWidth="145.0">
+               <Group fx:id="strela" layoutX="78.0" layoutY="193.0">
                   <children>
-                     <Label alignment="TOP_LEFT" text="Счёт игрока:">
+                     <Line fx:id="stick" endX="37.5" endY="-4.0" layoutY="11.0" startX="2.2928924560546875" startY="-4.0" />
+                     <Polygon fx:id="lalala" fill="#a8a9ad" layoutX="30.914215087890625" points="-3.0, 18.5, 8.0, 7.5, -3.0, -4.5" stroke="BLACK" strokeType="INSIDE">
+                        <rotationAxis>
+                           <Point3D />
+                        </rotationAxis>
+                     </Polygon>
+                  </children>
+               </Group>
+            </children></Pane>
+         <Pane layoutX="588.0" layoutY="-35.0" prefHeight="400.0" prefWidth="145.0" style="-fx-background-color: #2dd7d1;">
+            <padding>
+               <Insets left="30.0" right="30.0" />
+            </padding>
+            <children>
+               <VBox alignment="TOP_CENTER" layoutY="14.0" prefHeight="330.0" prefWidth="145.0">
+                  <children>
+                     <Label alignment="TOP_LEFT" text="СЧЁТ:">
                         <font>
-                           <Font name="Tahoma" size="20.0" />
+                           <Font name="JetBrains Mono Regular" size="20.0" />
                         </font>
                      </Label>
-                     <Label fx:id="scoreLabel" text="0">
+                     <Label fx:id="scorePoints" text="0">
                         <font>
-                           <Font name="Tahoma" size="20.0" />
+                           <Font name="JetBrains Mono Regular" size="20.0" />
                         </font>
                      </Label>
-                     <Label text="Выстрелов:">
+                     <Label text="ВЫСТРЕЛОВ:">
                         <font>
-                           <Font name="Tahoma" size="20.0" />
+                           <Font name="JetBrains Mono Regular" size="20.0" />
                         </font>
                         <VBox.margin>
                            <Insets top="20.0" />
                         </VBox.margin>
                      </Label>
-                     <Label text="0">
+                     <Label fx:id="shootScore" text="0">
                         <font>
                            <Font name="Tahoma" size="20.0" />
                         </font>
@@ -106,32 +120,50 @@
                      <Insets top="20.0" />
                   </padding>
                </VBox>
-            </children>
-            <padding>
-               <Insets left="30.0" right="30.0" />
-            </padding></Pane>
-         <HBox alignment="CENTER" layoutY="330.0" prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #3cc8c3;">
+            </children></Pane>
+         <HBox alignment="CENTER" layoutY="365.0" prefHeight="70.0" prefWidth="733.0" style="-fx-background-color: #3cc8c3;">
             <children>
-               <Button fx:id="startGame" mnemonicParsing="false" onAction="#startGame" text="Начало игры">
+               <VBox prefHeight="70.0" prefWidth="195.0" spacing="5.0">
+                  <children>
+                     <Button alignment="CENTER" mnemonicParsing="false" onAction="#startGame" prefHeight="0.0" prefWidth="140.0" text="НАЧАТЬ ИГРУ" textAlignment="CENTER">
+                        <font>
+                           <Font name="JetBrains Mono Regular" size="13.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin>
+                     </Button>
+                     <Button alignment="CENTER" mnemonicParsing="false" onAction="#stopGame" prefHeight="0.0" prefWidth="140.0" text="ЗАКОНЧИТЬ ИГРУ" textAlignment="CENTER">
+                        <font>
+                           <Font name="JetBrains Mono Regular" size="13.0" />
+                        </font>
+                        <VBox.margin>
+                           <Insets />
+                        </VBox.margin>
+                     </Button>
+                  </children>
+                  <HBox.margin>
+                     <Insets right="90.0" />
+                  </HBox.margin>
+                  <padding>
+                     <Insets top="7.0" />
+                  </padding>
+               </VBox>
+               <Button cache="true" mnemonicParsing="false" onAction="#pauseGame" prefHeight="40.0" prefWidth="82.0" text="ПАУЗА">
+                  <font>
+                     <Font name="JetBrains Mono Regular" size="13.0" />
+                  </font>
                   <HBox.margin>
                      <Insets right="20.0" />
                   </HBox.margin>
-                  <font>
-                     <Font name="Tahoma" size="13.0" />
-                  </font>
                </Button>
-               <Button mnemonicParsing="false" onAction="#stopGame" text="Остановить игру">
+               <Button cache="true" layoutX="427.0" layoutY="25.0" mnemonicParsing="false" onAction="#Shooting" prefHeight="40.0" prefWidth="82.0" text="ВЫСТРЕЛ">
+                  <font>
+                     <Font name="JetBrains Mono Regular" size="13.0" />
+                  </font>
                   <HBox.margin>
-                     <Insets right="20.0" />
+                     <Insets left="3.0" />
                   </HBox.margin>
-                  <font>
-                     <Font name="Tahoma" size="13.0" />
-                  </font>
-               </Button>
-               <Button cache="true" mnemonicParsing="false" onMouseClicked="#shoot" prefHeight="40.0" prefWidth="82.0" text="Выстрел">
-                  <font>
-                     <Font name="Tahoma" size="13.0" />
-                  </font>
                </Button>
             </children>
          </HBox>
