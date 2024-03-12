@@ -22,7 +22,7 @@
                <Line endX="93.0" endY="-200.0" layoutX="333.0" layoutY="200.0" startX="93.0" startY="200.0" />
                <Circle fx:id="BigCircle" layoutX="427.0" layoutY="200.0" radius="28.0" stroke="BLACK" strokeType="INSIDE">
                   <fill>
-                     <RadialGradient centerX="0.5" centerY="0.5" focusAngle="99.46" radius="0.5528735632183908">
+                     <RadialGradient centerX="0.5" centerY="0.5" focusAngle="99.46" radius="0.7022988505747125">
                         <stops>
                            <Stop>
                               <color>
@@ -49,7 +49,7 @@
                   </fill></Circle>
                <Circle fx:id="LittleCircle" layoutX="525.0" layoutY="200.0" radius="16.0" stroke="BLACK" strokeType="INSIDE">
                   <fill>
-                     <RadialGradient centerX="0.5" centerY="0.5" focusAngle="99.46" radius="0.4954022988505747">
+                     <RadialGradient centerX="0.5" centerY="0.5" focusAngle="99.46" radius="0.5988505747126437">
                         <stops>
                            <Stop>
                               <color>
@@ -76,8 +76,8 @@
                   </fill></Circle>
                <Group fx:id="strela" layoutX="78.0" layoutY="193.0">
                   <children>
-                     <Line fx:id="stick" endX="37.5" endY="-4.0" layoutY="11.0" startX="2.2928924560546875" startY="-4.0" />
-                     <Polygon fx:id="lalala" fill="#a8a9ad" layoutX="30.914215087890625" points="-3.0, 18.5, 8.0, 7.5, -3.0, -4.5" stroke="BLACK" strokeType="INSIDE">
+                     <Line fx:id="stick" endX="37.5" endY="-4.0" layoutY="11.0" startX="2.2928924560546875" startY="-4.0" strokeWidth="2.0" />
+                     <Polygon fx:id="lalala" fill="#c5c7cd" layoutX="30.914215087890625" points="-3.0, 18.5, 8.0, 7.5, -3.000030517578125, -4.5" stroke="#5e5c5c" strokeType="INSIDE" strokeWidth="2.0">
                         <rotationAxis>
                            <Point3D />
                         </rotationAxis>
@@ -125,7 +125,7 @@
             <children>
                <VBox prefHeight="70.0" prefWidth="195.0" spacing="5.0">
                   <children>
-                     <Button alignment="CENTER" mnemonicParsing="false" onAction="#startGame" prefHeight="0.0" prefWidth="140.0" text="НАЧАТЬ ИГРУ" textAlignment="CENTER">
+                     <Button fx:id="start" alignment="CENTER" mnemonicParsing="false" onAction="#startGame" prefHeight="0.0" prefWidth="140.0" text="НАЧАТЬ ИГРУ" textAlignment="CENTER">
                         <font>
                            <Font name="JetBrains Mono Regular" size="13.0" />
                         </font>
@@ -133,7 +133,7 @@
                            <Insets />
                         </VBox.margin>
                      </Button>
-                     <Button alignment="CENTER" mnemonicParsing="false" onAction="#stopGame" prefHeight="0.0" prefWidth="140.0" text="ЗАКОНЧИТЬ ИГРУ" textAlignment="CENTER">
+                     <Button fx:id="end" alignment="CENTER" disable="true" mnemonicParsing="false" onAction="#stopGame" prefHeight="0.0" prefWidth="140.0" text="ЗАКОНЧИТЬ ИГРУ" textAlignment="CENTER">
                         <font>
                            <Font name="JetBrains Mono Regular" size="13.0" />
                         </font>
@@ -149,7 +149,7 @@
                      <Insets top="7.0" />
                   </padding>
                </VBox>
-               <Button cache="true" mnemonicParsing="false" onAction="#pauseGame" prefHeight="40.0" prefWidth="82.0" text="ПАУЗА">
+               <Button fx:id="pause" cache="true" disable="true" mnemonicParsing="false" onAction="#pauseGame" prefHeight="40.0" prefWidth="114.0" text="ПАУЗА">
                   <font>
                      <Font name="JetBrains Mono Regular" size="13.0" />
                   </font>
@@ -157,7 +157,7 @@
                      <Insets right="20.0" />
                   </HBox.margin>
                </Button>
-               <Button cache="true" layoutX="427.0" layoutY="25.0" mnemonicParsing="false" onAction="#Shooting" prefHeight="40.0" prefWidth="82.0" text="ВЫСТРЕЛ">
+               <Button fx:id="shoot" cache="true" disable="true" layoutX="427.0" layoutY="25.0" mnemonicParsing="false" onAction="#Shooting" prefHeight="40.0" prefWidth="82.0" text="ВЫСТРЕЛ">
                   <font>
                      <Font name="JetBrains Mono Regular" size="13.0" />
                   </font>
